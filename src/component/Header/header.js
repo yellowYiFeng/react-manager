@@ -5,11 +5,11 @@ import Util from '../../utils/utils'
 import Axios from '../../axios/request'
 export default class Header extends React.Component{
     state = {}
-    componentWillMount(){
+    componentWillMount () {
         this.setState({
             userName : 'yellowYiFeng',
         })
-        setInterval(()=>{
+        setInterval(() => {
             let systime = Util.formatDate(new Date().getTime());
             this.setState({
                 systime
@@ -17,12 +17,12 @@ export default class Header extends React.Component{
         },1000);
         // this.getWeather();
     }
-    getWeather=() =>{
+    getWeather = () => {
         let city = 'suzhou';
         let opt = {
             url:'http://api.map.baidu.com/telematics/v3/weather?location='+city+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2',
         }
-        Axios.JsonP(opt).then((res)=>{
+        Axios.JsonP(opt).then((res) => {
             this.setState({
                 weatherCity : res[0].currentCity,
                 weatherData : res[0].weather_data[0].weather,
