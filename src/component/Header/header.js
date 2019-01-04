@@ -37,7 +37,7 @@ export default class Header extends React.Component{
                             <span className="user fr">欢迎{this.state.userName}</span>
                         </Col>
                         <Col span={1} className="header_top">
-                            <a href="#" className="exit red fr">退出</a>
+                            <a className="exit red fr">退出</a>
                         </Col>
                     </Row>
                     <Row className="breadCrumb">

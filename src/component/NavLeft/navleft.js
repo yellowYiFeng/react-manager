@@ -2,7 +2,7 @@ import React from 'react'
 import './navleft.less'
 import munuList from '../../config/menuconfig'//菜单
 import {Menu} from 'antd'
-import { HashRouter as Router, Route,NavLink, Link,Switch } from "react-router-dom";
+import {NavLink} from "react-router-dom";
 const SubMenu = Menu.SubMenu
 export default class NavLeft extends React.Component{
     componentWillMount(){    

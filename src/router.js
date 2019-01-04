@@ -13,6 +13,8 @@ import Messages from './pages/ui/messages'
 import Tabs from './pages/ui/tabs'
 import Gallery from './pages/ui/gallery'
 import Carousel from './pages/ui/carousel'
+import LoginPage from './pages/form/login'
+import Register from './pages/form/register'
 import NotFound from './pages/notFound/notFound'
 export default class AppRouter extends React.Component{
     render(){
@@ -33,6 +35,9 @@ export default class AppRouter extends React.Component{
                                     <Route path="/ui/tabs" component={Tabs}></Route>
                                     <Route path="/ui/gallery" component={Gallery}></Route>
                                     <Route path="/ui/carousel" component={Carousel}></Route>
+                                    <Route path="/form/login" component={LoginPage}></Route>
+                                    <Route path="/form/register" component={Register}></Route>
+
                                     <Route component={NotFound}></Route>
                                 </Switch>
                             </Admin>
