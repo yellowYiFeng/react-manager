@@ -15,6 +15,9 @@ import Gallery from './pages/ui/gallery'
 import Carousel from './pages/ui/carousel'
 import LoginPage from './pages/form/login'
 import Register from './pages/form/register'
+import Basic from './pages/table/basic'
+import High from './pages/table/high'
+import City from './pages/city/city'
 import NotFound from './pages/notFound/notFound'
 export default class AppRouter extends React.Component{
     render(){
@@ -37,6 +40,9 @@ export default class AppRouter extends React.Component{
                                     <Route path="/ui/carousel" component={Carousel}></Route>
                                     <Route path="/form/login" component={LoginPage}></Route>
                                     <Route path="/form/register" component={Register}></Route>
+                                    <Route path="/table/basic" component={Basic}></Route>
+                                    <Route path="/table/high" component={High}></Route>
+                                    <Route path="/city" component={City}></Route>
 
                                     <Route component={NotFound}></Route>
                                 </Switch>

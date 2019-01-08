@@ -2,7 +2,7 @@ import React from 'react'
 import {Row,Col} from 'antd'
 import './header.less'
 import Util from '../../utils/utils'
-import Axios from '../../axios/request'
+import Axios from '../../axios/https'
 export default class Header extends React.Component{
     state = {}
     componentWillMount () {
@@ -18,9 +18,10 @@ export default class Header extends React.Component{
         // this.getWeather();
     }
     getWeather = () => {
-        let city = 'suzhou';
+        let city = '苏州';
         let opt = {
-            url:'http://api.map.baidu.com/telematics/v3/weather?location='+city+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2',
+            url:'http://api.map.baidu.com/telematics/v3/weather?location='+encodeURIComponent(city)+'&output=json&ak=3p49MVra6urFRGOT9s8UBWr2'
+
         }
         Axios.JsonP(opt).then((res) => {
             this.setState({
