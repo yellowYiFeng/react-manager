@@ -24,6 +24,7 @@ export default class City extends React.Component{
     searchTable = () => {
         let info = this.filterForm.props.form.getFieldsValue();
         console.log(info)
+
     }
     render () {
         return (
@@ -59,9 +60,8 @@ export default class City extends React.Component{
 class FilterForm extends React.Component{
     render () {
         let formItemLayout = {
-            labelCol:{
-                span:6,
-            },
+            labelCol:6,
+            wrapperCol:18
         }
         let {getFieldDecorator} = this.props.form;
         return (
@@ -135,12 +135,7 @@ class TableForm extends React.Component{
     //获取表格数据
     getTableData = () => {
         let _this = this;
-        axios.post({
-            url: '/city/list',
-            data: {
-                params: _this.param
-            }
-        }).then((res) => {
+        axios.post('/city/list',_this.param).then((res) => {
             this.setState({
                 tableData: res.result.list,
                 pagination: Utils.pagination(res,(current)=>{

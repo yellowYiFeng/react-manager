@@ -83,7 +83,7 @@ export default [
         btnList: [
             {
                 title: '订单详情',
-                key: 'detail'
+                key: '/detail'
             },
             {
                 title: '结束订单',

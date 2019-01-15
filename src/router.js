@@ -18,6 +18,11 @@ import Register from './pages/form/register'
 import Basic from './pages/table/basic'
 import High from './pages/table/high'
 import City from './pages/city/city'
+import Order from './pages/order/order'
+import User from './pages/user/user'
+import Common from './component/Common/common'
+import OrderDetail from './pages/order/orderDetail'
+import Permission from './pages/permission/permission'
 import NotFound from './pages/notFound/notFound'
 export default class AppRouter extends React.Component{
     render(){
@@ -26,7 +31,13 @@ export default class AppRouter extends React.Component{
                 <App>
                     <Switch>
                         <Route path="/login" component={Login}></Route>
-                        <Route path="/" render={()=>
+                        <Route path="/common" render={()=>
+                            <Common>
+                                <Route path="/common/order/detail/:orderId" component={OrderDetail}></Route>
+                            </Common>
+                        }>
+                        </Route>
+                        <Route path="/" render={()=>//箭头函数相当于直接return 等同于 => {}
                             <Admin>
                                 <Switch>
                                     <Route path="/home" component={Home}></Route>
@@ -43,6 +54,9 @@ export default class AppRouter extends React.Component{
                                     <Route path="/table/basic" component={Basic}></Route>
                                     <Route path="/table/high" component={High}></Route>
                                     <Route path="/city" component={City}></Route>
+                                    <Route path="/order" component={Order}></Route>
+                                    <Route path="/user" component={User}></Route>
+                                    <Route path="/permission" component={Permission}></Route>
 
                                     <Route component={NotFound}></Route>
                                 </Switch>

@@ -1,3 +1,6 @@
+import React from 'react';
+import {Select} from 'antd'
+const Option = Select.Option
 export default{
     //格式化时间
     formatDate(time){
@@ -35,6 +38,30 @@ export default{
                 return `共${data.result.total}条`
             },
             showQuickJumper:true
+        }
+    },
+    //获取select中的option
+    getOptionList(data){
+        if(!data){
+            return [];
+        }
+        let options = [];
+        data.map((item,index) => {
+            options.push(<Option value={item.id} key={item.id}>{item.name}</Option>)
+        })
+        return options;
+    },
+    //修改表格选中行
+    //seletedRowKeys 选中行索引，是一个索引数组
+    //selectedItem 选中行，是一个对象，包含行中所有值
+    updateSelectedItem(selectedRowKeys,selectedItem,selectedIds){
+        if(selectedIds){
+
+        }else{
+            this.setState({
+                selectedItem,
+                selectedRowKeys
+            })
         }
     }
 }

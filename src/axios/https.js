@@ -15,14 +15,14 @@ export default class Axios {
             })
         })
     }
-    static post(options) {
+    static post(url,data) {
         let loading;
-        if(options.data && options.data.isLoading !== false ){
+        if(data && data.isLoading !== false ){
             loading = document.getElementById('ajaxLoading');
             loading.style.display = 'none';
         }
         return new Promise((resolve,reject) => {
-            axios.post(baseUrl + options.url,options.data).then((response) => {
+            axios.post(baseUrl + url,data).then((response) => {
                 if(response.status == '200' ){
                     let res = response.data;
                     if(res.code == 0){
@@ -33,7 +33,7 @@ export default class Axios {
                     reject(response.data);
                 }
             }).catch((error) => {
-                
+                console.log(error)
             })
         })
     }
