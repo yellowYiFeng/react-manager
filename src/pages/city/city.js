@@ -60,8 +60,8 @@ export default class City extends React.Component{
 class FilterForm extends React.Component{
     render () {
         let formItemLayout = {
-            labelCol:6,
-            wrapperCol:18
+            labelCol: {span: 6},
+            wrapperCol: {span: 18}
         }
         let {getFieldDecorator} = this.props.form;
         return (

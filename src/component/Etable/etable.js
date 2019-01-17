@@ -39,7 +39,6 @@ export default class Etable extends React.Component{
     }
     //radio/checkbox改变
     onSelectChange = (selectedRowKeys,selectedRows) => {
-        debugger
         let rowSelection = this.props.rowSelection;
         let selectedIds = [];
         if(rowSelection == 'checkbox'){
