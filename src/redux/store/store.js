@@ -4,9 +4,11 @@ import { createStore,applyMiddleware } from 'redux';
 import reducer from '../reducer/reducer';
 // 安装redux-devtools-extension的可视化工具。
 import { composeWithDevTools } from 'redux-devtools-extension'
-const initialState = {
-    menuName: ''
-}
-const configureStore = () => createStore(reducer, initialState);
 
-export default configureStore;
+const initialState = {
+    menuName: '',
+    count: 0
+}
+const store = () => createStore(reducer, initialState);
+
+export default store;

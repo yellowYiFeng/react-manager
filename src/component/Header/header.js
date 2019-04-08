@@ -1,11 +1,12 @@
 import React from 'react'
-import {Row,Col} from 'antd'
+import {Row,Col, Button} from 'antd'
 import {connect} from 'react-redux'
 import './header.less'
 import Util from '../../utils/utils'
 import Axios from '../../axios/https'
-import { from } from 'rxjs';
+
 class Header extends React.Component{
+    
     state = {}
     componentWillMount () {
         this.setState({
@@ -35,6 +36,7 @@ class Header extends React.Component{
     }
     render(){
         return <div className="header">
+                    <span>{this.props.count}</span>
                     <Row className="header_top">
                         <Col span={23} className="header_top">
                             <span className="user fr">欢迎{this.state.userName}</span>
@@ -59,7 +61,8 @@ class Header extends React.Component{
 }
 const mapStateHeader = state => {
     return {
-        menuName: state.menuName
+        menuName: state.menuName,
+        count: state.count
     }
 }
 export default connect(mapStateHeader)(Header)//connect(mapStateToProps,mapDispatchToProps)

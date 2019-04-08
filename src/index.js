@@ -8,10 +8,10 @@ import store from './redux/store/store'
 import 'antd/dist/antd.css'
 import './style/common.less'
 import './style/base.less'
-const configStoer = store();
+const configStore = store();
 // ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(
-    <Provider store = {configStoer}>
+    <Provider store = {configStore}>
         <Admin />
     </Provider>,
     document.getElementById('root')
